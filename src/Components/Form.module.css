@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  justify-content: space-evenly;
+}
+.form div {
+  margin: 10px;
+}
+.span {
+  display: flex;
+  justify-content: space-evenly;
+}
+.span div {
+  border: 1px solid;
+}
+.addProduct {
+  padding-top: 25px;
+}
