@@ -15,3 +15,14 @@
 .addProduct {
   padding-top: 25px;
 }
+.item {
+  display: flex;
+  justify-content: space-evenly;
+}
+.buyBtn {
+  display: flex;
+  justify-content: space-evenly;
+}
+.buyBtn div {
+  margin: 2px;
+}

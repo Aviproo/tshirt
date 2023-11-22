@@ -2,24 +2,29 @@ import { useContext, useRef } from "react";
 import classes from "./Form.module.css";
 import Context from "../store/Context";
 import axios from "axios";
+import Cart from "./Cart";
 const Form = () => {
   const ctx = useContext(Context);
   const name = useRef();
   const description = useRef();
   const price = useRef();
+
   const AddHandler = () => {
+    const nameRef = name.current.value;
+    const descriptionRef = description.current.value;
+    const priceRef = price.current.value;
     const data = {
-      name: name.current.value,
-      description: description.current.value,
-      price: price,
+      id: Math.random().toString(),
+      name: nameRef,
+      description: descriptionRef,
+      price: priceRef,
     };
+
     ctx.setFormData(data);
-    axios
-      .post(
-        "https://crudcrud.com/Dashboard/8b73ed47d2a24d8781b625d9a7f952e6/formData",
-        data
-      )
-      .then((res) => console.log(res));
+  };
+
+  const showCartHandeler = () => {
+    ctx.showcart();
   };
   return (
     <div className={classes.form}>
@@ -56,9 +61,10 @@ const Form = () => {
         <button onClick={AddHandler}>Add product</button>
       </div>
       <div>
-        <button>
-          Cart <sup>0</sup>
+        <button onClick={showCartHandeler}>
+          Cart <sup>{ctx.cartItem.length}</sup>
         </button>
+        {ctx.cart && <Cart />}
       </div>
     </div>
   );

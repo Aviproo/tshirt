@@ -1,5 +1,6 @@
 import "./App.css";
 import Form from "./Components/Form";
+import Input from "./Components/Input";
 import ContextProvider from "./store/ContextProvider";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <ContextProvider>
       <div className="App">
         <Form />
+        <Input />
       </div>
     </ContextProvider>
   );

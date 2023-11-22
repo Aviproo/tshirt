@@ -1,0 +1,13 @@
+.cart {
+  border: 1px solid;
+  width: 442px;
+  position: absolute;
+  z-index: 1;
+  height: 420px;
+  right: 0;
+  background: white;
+}
+.cartItem {
+  display: flex;
+  justify-content: space-evenly;
+}
